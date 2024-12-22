@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Meeting Note Assistant",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage", "scripting", "webNavigation", "tabs", "windows"],
+  "host_permissions": ["*://*/*"],
+  "icons": {
+    "48": "icon.png"
+    
+  },
+  "action": {
+    "default_icon": {
+      "48": "icon.png"
+      
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
+
+
+  

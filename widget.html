@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meeting Notes</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    #widget {
+      width: 330px;
+      height: 530px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px;
+      position: relative;
+      margin: auto;
+    }
+    #dropdownButton {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 6px 10px;
+      background: #4a9eff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      z-index: 2;
+      font-size: 14px;
+    }
+    #dropdownButton:hover {
+      background: #3d84d9;
+    }
+    #notesList {
+      position: absolute;
+      top: 50px;
+      left: 15px;
+      width: 180px;
+      background: #2d2d2d;
+      border-radius: 8px;
+      padding: 10px;
+      display: none;
+      max-height: 250px;
+      overflow-y: auto;
+      z-index: 3;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .noteItem {
+      padding: 8px;
+      margin-bottom: 6px;
+      background: #383838;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+    }
+    .noteItem:hover {
+      background: #424242;
+    }
+    .noteItem.active {
+      background: #4a9eff;
+      color: white;
+    }
+    #editorSection {
+      margin-top: 35px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    #titleInput {
+      width: 290px;
+      height: 35px;
+      background: #2d2d2d;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #e0e0e0;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    textarea {
+      width: 290px;
+      height: 300px;
+      background: #2d2d2d;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      color: #e0e0e0;
+      font-size: 14px;
+      resize: none;
+      transition: all 0.3s ease;
+    }
+    textarea:focus, #titleInput:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #4a9eff;
+    }
+    #saveButton {
+      width: 200px;
+      padding: 10px;
+      background-color: #4a9eff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+      margin: 0 auto;
+      display: block;
+    }
+    #saveButton:hover {
+      background-color: #3d84d9;
+    }
+    ::placeholder {
+      color: #808080;
+    }
+    #deleteButton {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 6px 10px;
+      background: #ff4a4a;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      z-index: 2;
+      font-size: 14px;
+    }
+    #deleteButton:hover {
+      background: #d93d3d;
+    }
+    .noteItem.delete-mode {
+      padding-right: 30px;
+      position: relative;
+    }
+    .noteItem.delete-mode::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      color: #ff4a4a;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .noteItem.delete-mode:hover {
+      background: #ff4a4a;
+      color: white;
+    }
+    .noteItem.delete-mode:hover::after {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="widget">
+    <button id="dropdownButton">Notes List</button>
+    <button id="deleteButton">Delete</button>
+    <div id="notesList">
+      <!-- Notes will be dynamically added here -->
+    </div>
+    <div id="editorSection">
+      <input type="text" id="titleInput" placeholder="Enter note title...">
+      <textarea id="notes" placeholder="Start taking notes..."></textarea>
+      <button id="saveButton">Save Notes</button>
+    </div>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>
