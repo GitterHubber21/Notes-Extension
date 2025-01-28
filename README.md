@@ -1,5 +1,3 @@
-The README and comments in the code were written with the help of AI.
-
 # Meeting Note Assistant
 
 ## Overview
