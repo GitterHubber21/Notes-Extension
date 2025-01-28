@@ -14,22 +14,9 @@ The Meeting Note Assistant is a Chrome extension designed to help users take not
 - **Popup Notifications**: The extension detects when a meeting is in progress and prompts users to take notes.
 - **Storage**: Notes are stored locally using Chrome's storage API, ensuring that they are saved even after the browser is closed.
 
-## Installation
 
-To install the Meeting Note Assistant, follow these steps:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/GitterHubber21/Notes-Extension.git
-   cd meeting-note-assistant
-   ```
-
-2. **Load the Extension in Chrome**:
-   - Open Chrome and navigate to `chrome://extensions/`.
-   - Enable "Developer mode" in the top right corner.
-   - Click on "Load unpacked" and select the directory where the extension files are located.
-
-3. **Permissions**: The extension requires permissions to access active tabs, storage, and web navigation to function correctly.
+## Permissions  
+The extension requires permissions to access active tabs, storage, and web navigation to function correctly.
 
 ## Usage
 
@@ -59,20 +46,4 @@ The project consists of the following files:
 - `delete.js`: The script that handles the deletion of notes.
 - `background.js`: The background script that detects meeting links and manages the popup behavior.
 - `icon.png`: The icon used for the extension.
-
-## Technologies Used
-
-- **HTML/CSS**: For structuring and styling the user interface.
-- **JavaScript**: For implementing the functionality of the extension.
-- **Chrome Extensions API**: For accessing browser features such as storage and tab management.
-
-## Contributing
-
-Contributions are welcome! If you would like to contribute to the Meeting Note Assistant, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them.
-4. Push your changes to your forked repository.
-5. Submit a pull request.
 
