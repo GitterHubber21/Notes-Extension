@@ -1,4 +1,4 @@
-let popupOpen = false; // Track if the popup is open
+let popupOpen = false;
 
 chrome.runtime.onInstalled.addListener(() => {
     console.log("Meeting Note Assistant installed.");
@@ -20,14 +20,13 @@ chrome.runtime.onInstalled.addListener(() => {
       console.log("Current hostname:", hostname);
       
       if (meetingDomains.some(domain => hostname.toLowerCase().includes(domain)) && !popupOpen) {
-        popupOpen = true; // Set the flag to true when opening the popup
+        popupOpen = true;
         chrome.windows.create({
           url: chrome.runtime.getURL("popup.html"),
           type: "popup",
           width: 230,
           height: 230
         }, () => {
-          // Reset the flag when the popup is closed
           chrome.windows.onRemoved.addListener(() => {
             popupOpen = false;
           });
